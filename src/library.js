@@ -7,6 +7,8 @@ export default (function libraryBuilder () {
     function createProj (projId) {
         if (!_library[projId]) {
             _library[projId] = projectBuilder(projId)
+        } else {
+            duplicateWarning(projId);
         }
     }
 
@@ -25,12 +27,12 @@ export default (function libraryBuilder () {
         delete _library[projId];
     }
 
-    function getEveryProj () {
+    function getEveryKey () {
         return Object.keys(_library);
     }
 
-    function printLibrary () {
-        getEveryProj().forEach(e => console.log(e));
+    function duplicateWarning (projId) {
+        console.log(`${projId} already exists.`)
     }
 
     return {
@@ -38,9 +40,12 @@ export default (function libraryBuilder () {
         getProj,
         updateProj,
         delProj,
-        getEveryProj,
+        getEveryKey,
         debug: {
-            printLibrary
+            printLibrary () {
+                getEveryKey().forEach(e => console.log(e));
+            },
+
         }
     }
 })();
