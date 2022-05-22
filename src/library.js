@@ -1,9 +1,11 @@
+import projectBuilder from './project.js';
+
 export default (function libraryBuilder () {
     const _library = {};
 
     // Create
-    function createProj (projId, projData) {
-        _library[projId] = projData;
+    function createProj (projId) {
+        _library[projId] = projectBuilder(projId);
     }
 
     // Read
