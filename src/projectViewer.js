@@ -1,3 +1,4 @@
+import style from './stylesheets/projectViewer.css';
 import todoComponent from "./todoComponent";
 
 export default function projectViewer (proj) {

@@ -1,3 +1,5 @@
+import style from './stylesheets/todoComponent.css';
+
 export default function todoComponent (todo) {
     const container = document.createElement("div");
     container.classList.add("todo-container");

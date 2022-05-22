@@ -1,0 +1,19 @@
+.pjview-container {
+    width: 95%;
+    height: 95%;
+    margin: 2.5% auto;
+}
+
+.pjview-title {
+    color: white;
+    margin: 20px;
+    font-size: 32px;
+}
+
+.pjview-bucket {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}

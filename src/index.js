@@ -1,6 +1,6 @@
 import library from './library.js';
-import style from './stylesheets/style.css';
-import projectViewer from './projectView.js';
+import index from './stylesheets/index.css';
+import projectViewer from './projectViewer.js';
 
 const root = document.querySelector("#app");
 
