@@ -1,3 +1,4 @@
+import newTodoModal from './newTodoModal';
 import style from './stylesheets/projectViewer.css';
 import todoComponent from "./todoComponent";
 
@@ -19,10 +20,15 @@ export default function projectViewer (proj) {
     container.appendChild(todoBucket);
 
     // Project Add Todo
-    const  addTodo = document.createElement("button");
-    addTodo.classList.add("pjview-addBtn");
-    container.appendChild(addTodo);
-    addTodo.textContent = "+";
+    const newTodoBtn = document.createElement("button");
+    newTodoBtn.classList.add("pjview-addBtn");
+    container.appendChild(newTodoBtn);
+    newTodoBtn.textContent = "+";
+    newTodoBtn.addEventListener('click', e => {
+        container.appendChild(newTodoModal());
+    });
+
+    container.appendChild(newTodoModal());
 
     return container
 }
