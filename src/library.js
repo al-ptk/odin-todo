@@ -6,7 +6,7 @@ export default (function libraryBuilder () {
     // Create
     function createProj (projId) {
         if (!_library[projId]) {
-            _library[projId] = projectBuilder(projId)
+            _library[projId] = projectBuilder(projId);
         } else {
             duplicateWarning(projId);
         }
@@ -45,7 +45,6 @@ export default (function libraryBuilder () {
             printLibrary () {
                 getEveryKey().forEach(e => console.log(e));
             },
-
         }
     }
 })();

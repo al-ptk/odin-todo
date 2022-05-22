@@ -1,31 +1,36 @@
 
-const todoManager = {
-        // Create
-        createTodo (todoId, todoData) {
-            _bucket[todoId] = todoData;
-        },
-    
-        // Read
-         getTodo (todoId) {
-            return _bucket[todoId];
-        },
-    
-        // Update
-        updateTodo (todoId, todoData) {
-            _bucket[todoId] = todoData;
-        },
-    
-        // Delete
-        delTodo (todoId) {
-            delete _bucket[todoId];
-        }
-}
+export default function projectBuilder (id) {
+    const _bucket = {};
 
-export default function projectBuilder (projId) {
-    return Object.assign(Object.create(todoManager), 
-        {
-            _bucket: {},
-            projId,
-        }
-    );
+    // Create
+    function createTodo (todoId, todoData) {
+        _bucket[todoId] = todoData;
+    };
+
+    // Read
+    function getTodo (todoId) {
+        return _bucket[todoId];
+    };
+
+    // Update
+    function updateTodo (todoId, todoData) {
+        _bucket[todoId] = todoData;
+    };
+
+    // Delete
+    function delTodo (todoId) {
+        delete _bucket[todoId];
+    };
+
+    function getEveryKey () {
+        return Object.keys(_bucket);
+    };
+
+    return {
+        createTodo,
+        getTodo,
+        delTodo,
+        updateTodo,
+        getEveryKey,
+    };
 };
