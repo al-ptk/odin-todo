@@ -31,8 +31,8 @@ export default (function libraryBuilder () {
         return Object.keys(_library);
     }
 
-    function duplicateWarning (projId) {
-        console.log(`${projId} already exists.`)
+    function duplicateWarning (id) {
+        console.log(`${id} already exists.`)
     }
 
     return {

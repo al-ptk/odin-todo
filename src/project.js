@@ -4,7 +4,11 @@ export default function projectBuilder (id) {
 
     // Create
     function createTodo (todoId, todoData) {
-        _bucket[todoId] = todoData;
+        if (!_bucket[todoId]) {
+            _bucket[todoId] = todoData;
+        } else {
+            duplicateWarning(todoId);
+        }
     };
 
     // Read
@@ -25,6 +29,10 @@ export default function projectBuilder (id) {
     function getEveryKey () {
         return Object.keys(_bucket);
     };
+
+    function duplicateWarning (id) {
+        console.log(`${id} already exists.`)
+    }
 
     return {
         createTodo,
