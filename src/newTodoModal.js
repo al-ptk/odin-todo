@@ -23,5 +23,20 @@ export default function newTodoModal () {
     descInput.placeholder = "Description..."
     container.appendChild(descInput);
 
+    // Actions
+    const btnContainer = document.createElement('div');
+    btnContainer.classList.add('ntm-btnContainer');
+    container.appendChild(btnContainer);
+
+    const saveBtn = document.createElement('button');
+    saveBtn.classList.add('ntm-save');
+    saveBtn.textContent = "Save"
+    btnContainer.appendChild(saveBtn);
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.classList.add('ntm-cancel');
+    cancelBtn.textContent = "Cancel";
+    btnContainer.appendChild(cancelBtn);
+
     return container;
 }
