@@ -5,7 +5,9 @@ export default (function libraryBuilder () {
 
     // Create
     function createProj (projId) {
-        _library[projId] = projectBuilder(projId);
+        if (!_library[projId]) {
+            _library[projId] = projectBuilder(projId)
+        }
     }
 
     // Read
@@ -18,14 +20,27 @@ export default (function libraryBuilder () {
         _library[projId] = projData;
     }
 
+    // Delete
     function delProj (projId) {
         delete _library[projId];
+    }
+
+    function getEveryProj () {
+        return Object.keys(_library);
+    }
+
+    function printLibrary () {
+        getEveryProj().forEach(e => console.log(e));
     }
 
     return {
         createProj,
         getProj,
         updateProj,
-        delProj
+        delProj,
+        getEveryProj,
+        debug: {
+            printLibrary
+        }
     }
 })();
