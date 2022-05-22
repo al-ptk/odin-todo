@@ -10,7 +10,7 @@
     left: 0;
     z-index: 10;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
     padding-top: 50px;
 }
@@ -24,6 +24,7 @@
     border-style: none;
     padding: 3px;
     font-size: 22px;
+    height: 1.2em;
 }
 
 .ntm-title::placeholder,
@@ -32,8 +33,12 @@
     color: rgb(204, 204, 204);
 }
 
+.ntm-btnContainer {
+    align-self: flex-end;
+}
+
 .ntm-save {
-    
+
 }
 
 .ntm-cancel {

@@ -27,8 +27,6 @@ export default function projectViewer (proj) {
     newTodoBtn.addEventListener('click', e => {
         container.appendChild(newTodoModal());
     });
-
-    container.appendChild(newTodoModal());
-
+    
     return container
 }

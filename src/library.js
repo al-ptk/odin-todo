@@ -1,7 +1,7 @@
 import projectBuilder from './project.js';
 
 export default (function libraryBuilder () {
-    const _library = {};
+    const _library = {"Default": projectBuilder("Default")};
 
     // Create
     function createProj (projId) {
