@@ -18,6 +18,5 @@ const id = "Hustle";
 library.createProj(id);
 library.getProj(id).createTodo(task.title, task);
 library.getProj(id).createTodo(task2.title, task2);
-console.log(library.getProj(id).getEveryKey());
 
-
+root.appendChild (projectViewer (library.getProj(id)));

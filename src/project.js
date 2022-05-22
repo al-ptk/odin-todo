@@ -26,12 +26,16 @@ export default function projectBuilder (id) {
         delete _bucket[todoId];
     };
 
-    function getEveryKey () {
-        return Object.keys(_bucket);
+    function getEveryEntry () {
+        return Object.entries(_bucket);
     };
 
     function duplicateWarning (id) {
         console.log(`${id} already exists.`)
+    };
+
+    function getId () {
+        return id;
     }
 
     return {
@@ -39,6 +43,7 @@ export default function projectBuilder (id) {
         getTodo,
         delTodo,
         updateTodo,
-        getEveryKey,
+        getEveryEntry,
+        getId,
     };
 };
