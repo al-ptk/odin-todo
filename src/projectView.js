@@ -7,8 +7,8 @@ export default function projectViewer (proj) {
     title.classList.add('ProjView-title');
     title.textContent = proj.getId();
 
-    for (const item in proj.getEveryEntry()) {
-        const todoCont = todoComponent(item);
+    for (const item of proj.getEveryEntry()) {
+        container.appendChild(todoComponent(item[1]));
     }
     
     return container

@@ -6,12 +6,16 @@ const root = document.querySelector("#app");
 
 const task = {
     title: "Greetings, Mortal",
-    description: "This is a mock message for test purposes."
+    description: "This is a mock message for test purposes.",
+    checked: false,
+    dueTo: "01/01/1970",
 }
 
 const task2 = {
     title: "Hello there!",
-    description: "General Kenobi!"
+    description: "General Kenobi!",
+    checked: false,
+    dueTo: "01/01/1970",
 }
 
 const id = "Hustle";
