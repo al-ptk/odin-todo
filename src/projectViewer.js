@@ -1,6 +1,8 @@
+import { makeTodoList } from './makeTodoList';
 import newTodoModal from './newTodoModal';
 import style from './stylesheets/projectViewer.css';
-import todoComponent from "./todoComponent";
+
+
 
 export default function projectViewer (proj) {
     const container = document.createElement('div');
@@ -12,12 +14,7 @@ export default function projectViewer (proj) {
     title.textContent = proj.getId();
 
     // Project Todo List
-    const todoBucket = document.createElement("div");
-    todoBucket.classList.add("pjview-bucket");
-    for (const item of proj.getEveryEntry()) {
-        todoBucket.appendChild(todoComponent(item[1]));
-    }
-    container.appendChild(todoBucket);
+    makeTodoList(container, proj);
 
     // Project Add Todo
     const newTodoBtn = document.createElement("button");
@@ -25,7 +22,7 @@ export default function projectViewer (proj) {
     container.appendChild(newTodoBtn);
     newTodoBtn.textContent = "+";
     newTodoBtn.addEventListener('click', e => {
-        container.appendChild(newTodoModal());
+        container.appendChild(newTodoModal(proj));
     });
     
     return container

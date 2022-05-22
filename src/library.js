@@ -1,7 +1,10 @@
 import projectBuilder from './project.js';
 
 export default (function libraryBuilder () {
-    const _library = {"Default": projectBuilder("Default")};
+    const _library = {
+        "Default": projectBuilder("Default"),
+        "Hustle": projectBuilder("Hustle")
+    };
 
     // Create
     function createProj (projId) {
@@ -27,8 +30,8 @@ export default (function libraryBuilder () {
         delete _library[projId];
     }
 
-    function getEveryKey () {
-        return Object.keys(_library);
+    function getEveryEntry () {
+        return Object.entries(_library);
     }
 
     function duplicateWarning (id) {
@@ -40,10 +43,10 @@ export default (function libraryBuilder () {
         getProj,
         updateProj,
         delProj,
-        getEveryKey,
+        getEveryEntry,
         debug: {
             printLibrary () {
-                getEveryKey().forEach(e => console.log(e));
+                getEveryEntry().forEach(e => console.log(e));
             },
         }
     }
