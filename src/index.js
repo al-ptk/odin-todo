@@ -1,4 +1,8 @@
 import library from './library.js';
+import style from './stylesheets/style.css';
+import projectViewer from './projectView.js';
+
+const root = document.querySelector("#app");
 
 const task = {
     title: "Greetings, Mortal",
@@ -15,3 +19,5 @@ library.createProj(id);
 library.getProj(id).createTodo(task.title, task);
 library.getProj(id).createTodo(task2.title, task2);
 console.log(library.getProj(id).getEveryKey());
+
+
